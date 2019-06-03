@@ -28,7 +28,7 @@ class Dog{
     this.happiness++;
     if (trickReward === true) {
       this.discipline ++;
-      let trickReward = false;
+      this.trickReward = false;
     }
     if (this.hunger >= 100) {
       this.hunger = 100;
@@ -41,17 +41,8 @@ class Dog{
   }
 
   trick(){
-    this.disclipine++;
-    this.happiness++;
-    this.hunger++;
-
-    this.happiness--;
-    this.disclipine--;
-  }
-
-  doTrick(){
     let num =  getRandomInt(2);
-    if (num = 1){
+    if (num === 1) {
       this.disclipine++;
     } else {
       this.disclipine--;
@@ -60,12 +51,7 @@ class Dog{
     this.trickReward = true;
     setTimeout(function(){
         this.trickReward = false;
-    }, 10000)
-  }
-
-  trickTreat() {
-    let trickReward = false;
-    return trickReward;
+    }, 10000);
   }
 
   play() {
@@ -77,9 +63,5 @@ class Dog{
     this.happiness--;
     this.disclipine++;
     }
-
-}
-
-
 
 }
