@@ -15,18 +15,27 @@ class Dog{
     }, 30000);
   }
 
+  watchHunger() {
+    setInterval(() => {
+      if(this.hunger < 50) {
+        this.happiness -= 5;
+        this.discipline -= 5;
+      }
+    }, 45000);
+  }
+
   feed(){
-    this.hunger++;
+    this.hunger += 10;
     if (this.hunger >= 100) {
       this.hunger = 100;
-      this.happiness - 5;
+      this.happiness -= 5;
     }
   }
 
   treat(){
-    this.hunger++;
+    this.hunger += 5;
     this.happiness++;
-    if (trickReward === true) {
+    if (this.trickReward === true) {
       this.discipline ++;
       this.trickReward = false;
     }
@@ -41,7 +50,11 @@ class Dog{
   }
 
   trick(){
-    let num =  getRandomInt(2);
+    if (this.discipline < 50) {
+      let num = getRandomInt(4);
+    } else {
+      let num =  getRandomInt(2);
+    }
     if (num === 1) {
       this.disclipine++;
     } else {
