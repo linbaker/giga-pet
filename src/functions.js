@@ -5,6 +5,7 @@ class Dog{
     this.hunger = 100;
     this.disclipine = 100;
     this.health = happiness + hunger + disclipine;
+    this.trickReward = false;
   }
   setHealth() {
     setInterval(() => {
@@ -25,8 +26,9 @@ class Dog{
   treat(){
     this.hunger++;
     this.happiness++;
-    if (trickReward === false) {
+    if (trickReward === true) {
       this.discipline ++;
+      let trickReward = false;
     }
     if (this.hunger >= 100) {
       this.hunger = 100;
@@ -55,12 +57,9 @@ class Dog{
       this.disclipine--;
     }
     this.disclipine--;
+    this.trickReward = true;
     setTimeout(function(){
-      document.addEventListener('click', function() {
-        let trickReward = true;
-        return trickReward;
-      });
-
+        this.trickReward = false;
     }, 10000)
   }
 
