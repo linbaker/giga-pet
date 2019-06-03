@@ -65,9 +65,9 @@ class Dog{
   trick(){
     let num = -1;
     if (this.discipline < 50) {
-      let num = getRandomInt(4);
+      let num = this.getRandomInt(4);
     } else {
-      let num =  getRandomInt(2);
+      let num =  this.getRandomInt(2);
     }
     if (num === 1) {
       this.disclipine++;
