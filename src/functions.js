@@ -58,7 +58,12 @@ class Dog{
     }
   }
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   trick(){
+    let num = -1;
     if (this.discipline < 50) {
       let num = getRandomInt(4);
     } else {
@@ -72,7 +77,7 @@ class Dog{
     this.disclipine--;
     this.trickReward = true;
     setTimeout(function(){
-        this.trickReward = false;
+      this.trickReward = false;
     }, 10000);
   }
 
@@ -86,6 +91,6 @@ class Dog{
   bathe(){
     this.happiness--;
     this.disclipine++;
-    }
+  }
 
 }
