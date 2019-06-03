@@ -18,7 +18,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Solar Age Finder',
+      title: 'Gigapet',
       template: './src/index.html',
       inject: 'body'
     })

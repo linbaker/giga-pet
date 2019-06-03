@@ -4,15 +4,16 @@ class Dog{
     this.happiness = 100;
     this.hunger = 100;
     this.disclipine = 100;
-    this.health = happiness + hunger + disclipine;
+    this.health = this.happiness + this.hunger + this.disclipine;
     this.trickReward = false;
   }
 
   setHealth() {
     setInterval(() => {
-      this.happiness--;
-      this.hunger--;
-      this.disclipine--;
+      console.log("here", this.happiness);
+      this.happiness -= 1;
+      this.hunger -= 1;
+      this.disclipine -= 1;
     }, 30000);
   }
 
@@ -65,9 +66,9 @@ class Dog{
   trick(){
     let num = -1;
     if (this.discipline < 50) {
-      let num = this.getRandomInt(4);
+      num = this.getRandomInt(4);
     } else {
-      let num =  this.getRandomInt(2);
+      num =  this.getRandomInt(2);
     }
     if (num === 1) {
       this.disclipine++;
@@ -92,5 +93,8 @@ class Dog{
     this.happiness--;
     this.disclipine++;
   }
+}
 
+module.exports = {
+  Dog: Dog
 }
