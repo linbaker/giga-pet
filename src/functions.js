@@ -7,6 +7,7 @@ class Dog{
     this.health = happiness + hunger + disclipine;
     this.trickReward = false;
   }
+
   setHealth() {
     setInterval(() => {
       this.happiness--;
@@ -24,6 +25,14 @@ class Dog{
     }, 45000);
   }
 
+  watchHappiness() {
+    setInterval(() => {
+      if(this.happiness < 50) {
+        this.discipline -= 5;
+      }
+    }, 45000);
+  }
+
   feed(){
     this.hunger += 10;
     if (this.hunger >= 100) {
@@ -34,16 +43,16 @@ class Dog{
 
   treat(){
     this.hunger += 5;
-    this.happiness++;
+    this.happiness += 5;
     if (this.trickReward === true) {
-      this.discipline ++;
+      this.discipline += 15;
       this.trickReward = false;
     }
     if (this.hunger >= 100) {
       this.hunger = 100;
-      this.happiness - 2;
+      this.happiness -= 2;
     }
-    if (this.happiness >=100) {
+    if (this.happiness >= 100) {
       this.happiness = 100;
       this.disclipine--;
     }
@@ -68,8 +77,10 @@ class Dog{
   }
 
   play() {
-    this.happiness++;
-    this.hunger--;
+    if (this.hunger > 50) {
+      this.happiness += 10;
+      this.hunger -= 2;
+    }
   }
 
   bathe(){
