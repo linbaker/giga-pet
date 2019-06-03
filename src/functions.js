@@ -4,7 +4,7 @@ class Dog{
     this.happiness = 100;
     this.hunger = 100;
     this.disclipine = 100;
-    this.health = this.happiness + this.hunger + this.disclipine;
+    this.health = parseInt((this.happiness + this.hunger + this.disclipine)/3);
     this.trickReward = false;
   }
 
@@ -14,7 +14,28 @@ class Dog{
       this.happiness -= 1;
       this.hunger -= 1;
       this.disclipine -= 1;
-    }, 30000);
+    }, 100);
+  }
+
+  setLevels(attribute) {
+    console.log("pet this dog");
+    if(attribute <= 0) {
+      console.log("dead");
+      attribute = 0;
+    }
+    if(attribute >= 100) {
+      attribute = 100;
+    }
+  }
+
+  checkLevels() {
+    setInterval(() => {
+      console.log("This works");
+      let attributes = [this.happiness, this.hunger, this.discipline, this.health];
+      attributes.forEach(function(attribute){
+        this.setLevels(attribute);
+      });
+    }, 100);
   }
 
   watchHunger() {

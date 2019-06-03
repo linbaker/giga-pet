@@ -10,3 +10,4 @@ $(document).ready(function(){
 
 let dog = new Dog("fido");
 dog.setHealth();
+dog.checkLevels();
