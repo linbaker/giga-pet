@@ -13,10 +13,7 @@ class Dog{
 
   setHealth() {
     myTimer = setInterval(() => {
-      console.log("happy", this.happiness);
-      console.log("hunger", this.hunger);
-      console.log("discipline", this.discipline);
-      console.log("health", this.health);
+      console.log(this.happiness, this.hunger, this.discipline);
       this.happiness -= 1;
       this.hunger -= 1;
       this.discipline -= 1;
@@ -37,15 +34,18 @@ class Dog{
     function clearDead(){
       clearInterval(deadCheck);
     }
+    let that = this;
     deadCheck = setInterval(() => {
-      console.log("This works");
       let attributes = [this.happiness, this.hunger, this.discipline, this.health];
       attributes.forEach(function(attribute){
-        console.log("pet this dog");
         if(attribute <= 0) {
-          console.log("dead");
           attribute = 0;
           clearInterval(myTimer);
+          that.hideAll();
+          $(".god").hide();
+          $(".dog").hide();
+          $("#dead").show();
+          alert("You killed him");
           clearDead();
         }
         if(attribute >= 100) {
@@ -56,20 +56,33 @@ class Dog{
   }
 
   watchHunger() {
+    let that = this;
     setInterval(() => {
       if(this.hunger < 50) {
         this.happiness -= 5;
         this.discipline -= 5;
+        that.hideAll();
+        $("#sad").show();
+        alert("hungry");
       }
-    }, 45000);
+    }, 15000);
   }
 
   watchHappiness() {
+    let that = this;
     setInterval(() => {
       if(this.happiness < 50) {
         this.discipline -= 5;
+        that.hideAll();
+        $("#sad").show();
+        alert("extra sad");
       }
-    }, 45000);
+      if(this.happiness > 90) {
+        that.hideAll();
+        $("#happy").show();
+        alert("extra happy");
+      }
+    }, 15000);
   }
 
   feed(){
@@ -87,6 +100,7 @@ class Dog{
   }
 
   scoop(){
+    this.happiness ++;
     this.hideAll();
     $("#wait").show();
   }
@@ -94,6 +108,8 @@ class Dog{
   treat(){
     this.hunger += 5;
     this.happiness += 5;
+    this.hideAll();
+    $("#treat").show();
     if (this.trickReward === true) {
       this.discipline += 15;
       this.trickReward = false;
@@ -113,16 +129,21 @@ class Dog{
   }
 
   trick(){
+    this.hideAll();
     let num = -1;
+    console.log(this.discipline);
     if (this.discipline < 50) {
-      num = this.getRandomInt(4);
+      num = this.getRandomInt(8);
     } else {
-      num =  this.getRandomInt(2);
+      num =  this.getRandomInt(4);
     }
-    if (num === 1) {
+    console.log(num);
+    if (num === 1 || num === 2 || num === 3) {
       this.discipline += 10;
+      $("#tricked").show();
     } else {
       this.discipline -= 5;
+      $("#not_trick").show();
     }
     this.discipline -= 3;
     this.trickReward = true;
@@ -131,22 +152,36 @@ class Dog{
     }, 10000);
   }
 
-  play() {
-    if (this.hunger > 50) {
+  plays() {
+    if (this.hunger < 50) {
       this.happiness += 10;
       this.hunger -= 2;
     }
+    this.hideAll();
+    $("#played").show();
   }
 
   bathe(){
+    this.hideAll();
+    $("#bathe").show();
     this.happiness--;
     this.discipline++;
   }
 
   pet(){
+    this.hideAll();
+    $("#treat").show();
     this.happiness += 5;
 
     }
+
+punish() {
+  this.hideAll();
+  $("#sad").show();
+  this.happiness -= 5;
+  this.discipline -= 2;
+}
+
 }
 
 module.exports = {

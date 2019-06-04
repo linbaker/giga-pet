@@ -54,7 +54,7 @@ var sad_gif = document.getElementById('sad');
 sad_gif.src = sad;
 var bathed_gif = document.getElementById('bathe');
 bathed_gif.src = bathed;
-var play_gif = document.getElementById('play');
+var play_gif = document.getElementById('played');
 play_gif.src = played;
 var tricked_gif = document.getElementById('tricked');
 tricked_gif.src = tricked;
@@ -65,10 +65,34 @@ happy_gif.src = happy;
 
 
 $(document).ready(function(){
-  console.log("test");
+  $("#i_feed").click(function() {
+    dog.feed();
+  })
+  $("#i_poop").click(function() {
+    dog.scoop();
+  })
+  $("#i_punish").click(function() {
+    dog.punish();
+  })
+  $("#i_treat").click(function() {
+    dog.treat();
+  })
+  $("#i_trick").click(function() {
+    dog.trick();
+  })
+  $("#i_pet").click(function() {
+    dog.pet();
+  })
+  $("#i_play").click(function() {
+    dog.plays();
+  })
+  $("#i_bathe").click(function() {
+    dog.bathe();
+  })
 });
 
 let dog = new Dog("fido");
 dog.setHealth();
 dog.checkLevels();
-dog.feed();
+dog.watchHunger();
+dog.watchHappiness();
