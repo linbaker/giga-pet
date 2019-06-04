@@ -36,6 +36,20 @@ class Dog{
     }
     let that = this;
     deadCheck = setInterval(() => {
+      //health bar
+      let health = document.getElementById("health")
+      health.value = this.health;
+      //discipline bar
+      let discipline = document.getElementById("discipline")
+      discipline.value = this.discipline;
+      //hunger bar
+      let hunger = document.getElementById("hunger")
+      hunger.value = this.hunger;
+      //happiness bar
+      let happiness = document.getElementById("happiness")
+      happiness.value = this.happiness;
+
+
       let attributes = [this.happiness, this.hunger, this.discipline, this.health];
       attributes.forEach(function(attribute){
         if(attribute <= 0) {
@@ -153,12 +167,12 @@ class Dog{
   }
 
   plays() {
-    if (this.hunger < 50) {
-      this.happiness += 10;
-      this.hunger -= 2;
+    if (this.hunger > 50) {
+      this.happiness += 5;
+      this.hunger -= 10;
+      this.hideAll();
+      $("#played").show();
     }
-    this.hideAll();
-    $("#played").show();
   }
 
   bathe(){
@@ -173,14 +187,14 @@ class Dog{
     $("#treat").show();
     this.happiness += 5;
 
-    }
+  }
 
-punish() {
-  this.hideAll();
-  $("#sad").show();
-  this.happiness -= 5;
-  this.discipline -= 2;
-}
+  punish() {
+    this.hideAll();
+    $("#sad").show();
+    this.happiness -= 5;
+    this.discipline -= 2;
+  }
 
 }
 
