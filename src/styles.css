@@ -1,3 +1,21 @@
+progress {
+  border-radius: 2px;
+  width: 80%;
+  height: 22px;
+  border-radius: 20px;
+  color: pink;
+}
+progress::-webkit-progress-bar {
+ background-color: pink;
+  border-radius: 20px;
+}
+progress::-webkit-progress-value {
+   border-radius: 2px;
+     border-radius: 20px;
+}
+progress::-moz-progress-bar {
+  /* style rules */
+}
 .kaya {
   background-color: #d5e5e4;
   color: black;
@@ -30,6 +48,11 @@
   height: 100px;
   width: inherit;
   margin: 2%;
+}
+
+.health-bars {
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 
 .dog {
