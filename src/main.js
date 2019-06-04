@@ -21,26 +21,6 @@ import trick from './img/icons/i_trick.png';
 import treat from './img/icons/i_treat.png';
 import punish from './img/icons/i_punish.png';
 
-
-var food_gif = document.getElementById('food');
-food_gif.src = food;
-var treated_gif = document.getElementById('treat');
-treated_gif.src = treated;
-var dead_gif = document.getElementById('dead');
-dead_gif.src = dead;
-var sad_gif = document.getElementById('sad');
-sad_gif.src = sad;
-var bathed_gif = document.getElementById('bathe');
-bathed_gif.src = bathed;
-var play_gif = document.getElementById('play');
-play_gif.src = played;
-var tricked_gif = document.getElementById('tricked');
-tricked_gif.src = tricked;
-var not_tricked_gif = document.getElementById('not_tricked');
-not_tricked_gif.src = not_tricked;
-var happy_gif = document.getElementById('happy');
-happy_gif.src = happy;
-
 var i_feed = document.getElementById('i_feed');
 i_feed.src = feed;
 var i_bathe = document.getElementById('i_bathe');
@@ -57,6 +37,26 @@ var i_treat = document.getElementById('i_treat');
 i_treat.src = treat;
 var i_punish = document.getElementById('i_punish');
 i_punish.src = punish;
+
+var food_gif = document.getElementById('food');
+food_gif.src = food;
+var treated_gif = document.getElementById('treat');
+treated_gif.src = treated;
+var dead_gif = document.getElementById('dead');
+dead_gif.src = dead;
+var sad_gif = document.getElementById('sad');
+sad_gif.src = sad;
+var bathed_gif = document.getElementById('bathe');
+bathed_gif.src = bathed;
+var play_gif = document.getElementById('play');
+play_gif.src = played;
+var tricked_gif = document.getElementById('tricked');
+tricked_gif.src = tricked;
+var not_tricked_gif = document.getElementById('not_trick');
+not_tricked_gif.src = not_trick;
+var happy_gif = document.getElementById('happy');
+happy_gif.src = happy;
+
 
 $(document).ready(function(){
   console.log("test");
