@@ -5,31 +5,23 @@ class Dog{
     this.name = name;
     this.happiness = 100;
     this.hunger = 100;
-    this.disclipine = 5;
-    this.health = parseInt((this.happiness + this.hunger + this.disclipine)/3);
+    this.discipline = 100;
+    this.health = 100;
     this.trickReward = false;
   }
 
   setHealth() {
     myTimer = setInterval(() => {
-      console.log("here", this.happiness);
+      console.log("happy", this.happiness);
+      console.log("hunger", this.hunger);
+      console.log("discipline", this.discipline);
+      console.log("health", this.health);
       this.happiness -= 1;
       this.hunger -= 1;
-      this.disclipine -= 1;
+      this.discipline -= 1;
+      this.health = parseInt((this.happiness + this.hunger + this.discipline)/3);
     }, 100);
   }
-  //
-  // setLevels(attribute) {
-  //   console.log("pet this dog");
-  //   if(attribute <= 0) {
-  //     console.log("dead");
-  //     attribute = 0;
-  //   }
-  //   if(attribute >= 100) {
-  //     attribute = 100;
-  //   }
-  // }
-
 
   checkLevels() {
     function clearDead(){
@@ -91,7 +83,7 @@ class Dog{
     }
     if (this.happiness >= 100) {
       this.happiness = 100;
-      this.disclipine--;
+      this.discipline--;
     }
   }
 
@@ -107,11 +99,11 @@ class Dog{
       num =  this.getRandomInt(2);
     }
     if (num === 1) {
-      this.disclipine++;
+      this.discipline++;
     } else {
-      this.disclipine--;
+      this.discipline--;
     }
-    this.disclipine--;
+    this.discipline--;
     this.trickReward = true;
     setTimeout(function(){
       this.trickReward = false;
@@ -127,7 +119,7 @@ class Dog{
 
   bathe(){
     this.happiness--;
-    this.disclipine++;
+    this.discipline++;
   }
 }
 
