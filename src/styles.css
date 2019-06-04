@@ -31,3 +31,7 @@
   width: inherit;
   margin: 2%;
 }
+
+.dog {
+  display: none;
+}

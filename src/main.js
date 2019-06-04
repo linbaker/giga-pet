@@ -3,6 +3,7 @@ import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import wait from './img/wait.gif';
 import food from './img/food.gif';
 import pooped from './img/poop.gif';
 import treated from './img/treat.gif';
@@ -39,6 +40,8 @@ i_treat.src = treat;
 var i_punish = document.getElementById('i_punish');
 i_punish.src = punish;
 
+var wait_gif = document.getElementById('wait');
+wait_gif.src = wait;
 var food_gif = document.getElementById('food');
 food_gif.src = food;
 var poop_gif = document.getElementById('poop');
@@ -68,3 +71,4 @@ $(document).ready(function(){
 let dog = new Dog("fido");
 dog.setHealth();
 dog.checkLevels();
+dog.feed();

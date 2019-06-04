@@ -1,5 +1,6 @@
 var myTimer;
 var deadCheck;
+import $ from 'jquery';
 class Dog{
   constructor(name){
     this.name = name;
@@ -21,6 +22,15 @@ class Dog{
       this.discipline -= 1;
       this.health = parseInt((this.happiness + this.hunger + this.discipline)/3);
     }, 30000);
+  }
+
+  hideAll(){
+    $(".god").hide();
+    $(".dog").hide();
+  }
+
+  defaultDog(){
+    $("#wait").show();
   }
 
   checkLevels() {
@@ -64,10 +74,21 @@ class Dog{
 
   feed(){
     this.hunger += 10;
+    this.hideAll();
+    $("#food").show();
     if (this.hunger >= 100) {
       this.hunger = 100;
       this.happiness -= 5;
     }
+    setTimeout(function(){
+      $("#food").hide();
+      $("#poop").show();
+    }, 3000);
+  }
+
+  scoop(){
+    this.hideAll();
+    $("#wait").show();
   }
 
   treat(){
@@ -121,6 +142,11 @@ class Dog{
     this.happiness--;
     this.discipline++;
   }
+
+  pet(){
+    this.happiness += 5;
+
+    }
 }
 
 module.exports = {
