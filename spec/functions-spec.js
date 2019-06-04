@@ -5,10 +5,7 @@ describe('Dog', function() {
 
   beforeEach(function() {
     jasmine.clock().install();
-  });
-
-  afterEach(function() {
-    jasmine.clock().uninstall();
+    clifford.setHealth();
   });
 
 
@@ -17,6 +14,15 @@ describe('Dog', function() {
     expect(typeof clifford).toEqual(typeof new Dog);
   });
 
+  it('should have a health level of 98 after 60001 milliseconds', function() {
+    jasmine.clock().tick(60001);
+
+    expect(clifford.health).toEqual(98);
+  });
+
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
   // it('should have a name and a health level of 300', function() {
   //   expect(fuzzy.name).toEqual("Fuzzy");
   //   expect(fuzzy.foodLevel).toEqual(10);
