@@ -4,6 +4,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import food from './img/food.gif';
+import pooped from './img/poop.gif';
 import treated from './img/treat.gif';
 import dead from './img/dead.gif';
 import sad from './img/sad.gif';
@@ -40,6 +41,8 @@ i_punish.src = punish;
 
 var food_gif = document.getElementById('food');
 food_gif.src = food;
+var poop_gif = document.getElementById('poop');
+poop_gif.src = pooped;
 var treated_gif = document.getElementById('treat');
 treated_gif.src = treated;
 var dead_gif = document.getElementById('dead');
