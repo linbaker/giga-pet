@@ -125,4 +125,4 @@ class Dog{
 
 module.exports = {
   Dog: Dog
-}
+};
