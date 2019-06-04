@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function(){
   console.log("test");
-  });
+});
 
 let dog = new Dog("fido");
 dog.setHealth();

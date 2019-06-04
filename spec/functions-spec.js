@@ -16,7 +16,6 @@ describe('Dog', function() {
 
   it('should have a health level of 98 after 60001 milliseconds', function() {
     jasmine.clock().tick(60001);
-
     expect(clifford.health).toEqual(98);
   });
 

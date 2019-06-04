@@ -20,7 +20,7 @@ class Dog{
       this.hunger -= 1;
       this.discipline -= 1;
       this.health = parseInt((this.happiness + this.hunger + this.discipline)/3);
-    }, 100);
+    }, 30000);
   }
 
   checkLevels() {
@@ -99,11 +99,11 @@ class Dog{
       num =  this.getRandomInt(2);
     }
     if (num === 1) {
-      this.discipline++;
+      this.discipline += 10;
     } else {
-      this.discipline--;
+      this.discipline -= 5;
     }
-    this.discipline--;
+    this.discipline -= 3;
     this.trickReward = true;
     setTimeout(function(){
       this.trickReward = false;
