@@ -1,6 +1,33 @@
 .kaya {
-  background-color: blue;
-  color: red;
+  background-color: #d5e5e4;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr, 3fr, 1fr;
+  grid-template-rows: 1fr, 3fr, 1fr;
   /* background: url('./dog.jpg'); */
+}
 
+.column {
+  float: left;
+  width: 33.33%;
+}
+.icons-top{
+  grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.icons-bottom{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.doggie {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.icon {
+  height: 100px;
+  width: inherit;
+  margin: 2%;
 }
